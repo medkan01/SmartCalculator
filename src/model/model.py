@@ -1,5 +1,6 @@
 import speech_recognition as sr
 
+fr = "fr-FR"
 
 def getAudio():
     r = sr.Recognizer()
@@ -19,5 +20,3 @@ def getTextFromAudio(audio, language_audio):
         print("L'audio n'a pas été compris")
     except sr.RequestError as e:
         print("Le service Google Speech API ne fonctionne plus" + format(e))
-
-print(getTextFromAudio(getAudio(), "fr-FR"))
