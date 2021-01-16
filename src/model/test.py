@@ -5,7 +5,7 @@ t1 = ""
 t2 = t1.split(" ")
 
 print(t2)
-#Il faut donner la priorité aux multiplications et aux divisions
+#Il faut donner la priorité aux multiplications et aux divisions --> utiliser la fonction python qui vérifie si un caractère est dans une liste ou pas.
 try:
     res = 0
     if(t2[0].isnumeric()):
