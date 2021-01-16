@@ -11,7 +11,8 @@ def getAudio():
         audio = r.listen(source)
         return audio
 
-def getTextFromAudio(audio, language_audio):
+def getTextFromAudio(language_audio):
+    audio = getAudio()
     r = sr.Recognizer()
     try:
         text = r.recognize_google(audio, language=language_audio)
