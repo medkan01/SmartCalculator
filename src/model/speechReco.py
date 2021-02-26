@@ -3,6 +3,13 @@ import speech_recognition as sr
 fr = "fr-FR"
 
 def getAudio():
+    """
+        Record audio from main microphone source of the computer.
+
+    Returns:
+        
+        - AudioData: Audio data in the record.
+    """
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Réglage du bruit ambiant... Patientez...")
@@ -11,11 +18,22 @@ def getAudio():
         audio = r.listen(source)
         return audio
 
-def getTextFromAudio(language_audio):
+def getTextFromAudio(languageAudio):
+    """
+        Generate String from AudioData to be used in many functions.
+        
+    Args:
+    
+        - languageAudio (str): Language of the user.
+
+    Returns:
+        
+        - str: Text from audio recorded by the microphone.
+    """
     audio = getAudio()
     r = sr.Recognizer()
     try:
-        text = r.recognize_google(audio, language=language_audio)
+        text = r.recognize_google(audio, language=languageAudio)
         return text
     except sr.UnknownValueError:
         print("L'audio n'a pas été compris")

@@ -1,6 +1,17 @@
 from speechReco import *
 
 def mulDiv(f):
+    """
+        Calculate multiplications and divisions of a mathematical operation.
+        
+    Args:
+    
+        - f (str): Mathematical operation.
+
+    Returns:
+    
+        - str: Mathematical operation where multiplications and divisions are calculated.
+    """
     mulDivOk = False
     i = 0
 
@@ -20,6 +31,17 @@ def mulDiv(f):
     return f
 
 def addSub(f):
+    """
+        Calculate additions and substractions of a mathematical operation.
+
+    Args:
+    
+        - f (str): Mathematical operation
+
+    Returns:
+    
+        - str: Mathematical operation where additions and substractions are calculated.
+    """
     addSubOk = False
     i = 0
 
@@ -38,7 +60,20 @@ def addSub(f):
         i += 1
     return f
 
+
 def calculation(f):
+    """
+        Calculate a mathematical operation. Multiplications and divisions are calculated first, then additions
+        and divisions.
+
+    Args:
+        
+        - f (str): Mathematical operation.
+
+    Returns:
+        
+        - float: Result of the mathematical operation.
+    """
     try:
         f = mulDiv(f)
         f = addSub(f)
@@ -46,9 +81,3 @@ def calculation(f):
         return res
     except Exception as e:
         print("Attention! Le calcul est incorrect ou impossible.")
-
-text = "19 + 2"
-f = text.split(" ")
-res = calculation(f)
-print(text)
-print(res)
